@@ -152,19 +152,6 @@ void build_columns(void) {
     }
 }
 
-int length_feasible(void) {
-    int max_addend_len = 0;
-    for (int i = 0; i < addend_count; i++) {
-        int len = (int)strlen(addends[i]);
-        if (len > max_addend_len) max_addend_len = len;
-    }
-    int res_len = (int)strlen(result);
-
-    if (res_len < max_addend_len) return 0;
-    if (res_len > max_addend_len + 1) return 0;
-    return 1;
-}
-
 int check_column(int j, int carry_in) {
     int sum = carry_in;
     int res_digit = -1;
@@ -249,19 +236,6 @@ void process_line(const char *raw_line) {
 
     collect_letters();
     build_columns();
-
-    if (!length_feasible()) {
-        fprintf(out, "%s\nРешение не найдено\n\n", raw_line);
-        eq_count++;
-        if (eq_count % 10 == 0) {
-            struct timespec t_now;
-            clock_gettime(CLOCK_MONOTONIC, &t_now);
-            double elapsed = (t_now.tv_sec - t_start.tv_sec)
-                           + (t_now.tv_nsec - t_start.tv_nsec) / 1e9;
-            printf("[%3d] %.6f\n", eq_count, elapsed);
-        }
-        return;
-    }
 
     for (int i = 0; i < letter_count; i++) letters[i].digit = -1;
 
