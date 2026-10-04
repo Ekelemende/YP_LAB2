@@ -35,8 +35,8 @@ void add_letter(char c) {
     unsigned char uc = (unsigned char)c;
     if (idx[uc] == -1 && isupper(uc)) {
         idx[uc] = letter_count;
-        letters[letter_count].letter     = c;
-        letters[letter_count].digit      = -1;
+        letters[letter_count].letter = c;
+        letters[letter_count].digit = -1;
         letters[letter_count].is_leading = 0;
         letter_count++;
     }
