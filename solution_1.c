@@ -9,17 +9,17 @@
 #define MAX_LETTERS 26
 
 char addends[MAX_WORDS][MAX_LEN];
-int  addend_count = 0;
+int addend_count = 0;
 char result[MAX_LEN];
 
 char letters[MAX_LETTERS];
-int  letter_count = 0;
+int letter_count = 0;
 
-int  digit_of[MAX_LETTERS];
-int  used_digit[10];
-int  is_leading[MAX_LETTERS];
+int digit_of[MAX_LETTERS];
+int used_digit[10];
+int is_leading[MAX_LETTERS];
 
-int  solved = 0;
+int solved = 0;
 
 int eq_count = 0;
 struct timespec t_start;
