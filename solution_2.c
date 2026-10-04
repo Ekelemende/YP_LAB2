@@ -9,7 +9,7 @@
 #define MAX_LETTERS 26
 
 char addends[MAX_WORDS][MAX_LEN];
-int  addend_count = 0;
+int addend_count = 0;
 char result[MAX_LEN];
 
 typedef struct {
@@ -19,13 +19,13 @@ typedef struct {
 } Letter;
 
 Letter letters[MAX_LETTERS];
-int    letter_count = 0;
+int letter_count = 0;
 
-int  idx[256];
+int idx[256];
 
-int  used_digit[10];
+int used_digit[10];
 
-int  solved = 0;
+int solved = 0;
 
 int eq_count = 0;
 struct timespec t_start;
